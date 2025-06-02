@@ -17,7 +17,7 @@ X = dfr.drop('Sales',axis=1,inplace=False)
 # Create the dependent variable data
 y = dfr[dependent_variable].values
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2)
 
 # Transforming data
 scaler = MinMaxScaler()
@@ -33,6 +33,6 @@ y_pred_test = regressor.predict(X_test)
 r2_train= r2_score(y_train, y_pred_train)
 print(r2_train)
 
-r2_test= r2_score(y_test, y_pred_test)
+r2_test = r2_score(y_test, y_pred_test)
 print(r2_test)
 
